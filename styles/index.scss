@@ -1,0 +1,140 @@
+@use './reset';
+@use './fonts';
+@use './variables';
+@use './breakpoint';
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    padding: 2.8rem 1.6rem;
+    justify-content: center;
+    background: variables.$cream;
+}
+
+.card {
+    width: 34.3rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    background: variables.$white;
+
+    .perfume__img {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+
+    .body {
+        padding: 2.4rem;
+
+        .perfume {
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.25;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5rem;
+            text-transform: uppercase;
+            font-family: "Montserrat-Medium";
+            color: variables.$dark-grayish-blue;
+        }
+
+        .title {
+            font-weight: 700;
+            font-size: 3.2rem;
+            line-height: 3.2rem;
+            margin-bottom: 1.6rem;
+            color: variables.$very-dark-blue;
+            font-family: "Fraunces-SemiBold";
+        }
+
+        .text {
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 2.3rem;
+            margin-bottom: 2.4rem;
+            font-family: "Montserrat-Medium";
+            color: variables.$dark-grayish-blue;
+        }
+
+        .price__container {
+            gap: 1.9rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+
+            .price {
+                font-weight: 700;
+                font-size: 3.2rem;
+                line-height: 3.2rem;
+                color: variables.$dark-cyan;
+                font-family: "Fraunces-SemiBold";
+            }
+
+            .oldprice {
+                font-weight: 500;
+                font-size: 1.3rem;
+                line-height: 2.3rem;
+                text-decoration: line-through;
+                font-family: "Montserrat-Medium";
+                color: variables.$dark-grayish-blue;
+            }
+        }
+
+        .button {
+            width: 100%;
+            border: none;
+            gap: 1.161rem;
+            display: flex;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.4rem;
+            padding: 1.56rem 0;
+            line-height: normal;
+            align-items: center;
+            border-radius: 0.8rem;
+            color: variables.$white;
+            justify-content: center;
+            transition: background 0.5s ease;
+            background: variables.$dark-cyan;
+            font-family: "Montserrat-Medium";
+
+            &:hover {
+                background: #1A4032;
+            }
+        }
+    }
+}
+
+@include breakpoint.mq(desktop) {
+    .card {
+        width: 60rem;
+        display: flex;
+
+        .perfume__img {
+            width: 30rem;
+            border-radius: 0;
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            content: url("/assets/images/image-product-desktop.jpg");
+        }
+
+        .body { 
+            padding: 3.2rem;
+
+            .perfume {
+                margin-bottom: 2rem;
+            }
+
+            .title {
+                margin-bottom: 2.4rem;
+            }
+
+            .text {
+                margin-bottom: 2.9rem;
+            }
+
+            .price__container { 
+                margin-bottom: 3rem;
+            }
+        }
+    }
+  }
